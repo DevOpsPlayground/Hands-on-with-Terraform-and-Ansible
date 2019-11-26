@@ -1,0 +1,65 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": ["ec2:DescribeImages", 
+                       "ec2:DescribeInstances", 
+                       "ec2:DescribeVolumes", 
+                       "ec2:DescribeAvailabilityZones", 
+                       "ec2:CreateVolume",
+                       "ec2:TerminateInstances",
+                       "ec2:DescribeTags",
+                       "ec2:DescribeInstanceAttribute",
+                       "ec2:DescribeInstanceCreditSpecifications"],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [ "ec2:CreateKeyPair",
+                        "ec2:DeleteKeyPair",
+                        "ec2:DescribeKeyPairs",
+                        "ec2:ImportKeyPair",
+                        "ec2:CreateTags"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": "ec2:RunInstances",
+            "Resource": [
+                "arn:aws:ec2:ap-southeast-1:*:instance/*"
+            ],
+            "Condition": {
+             "StringEquals": {
+              "ec2:InstanceType": "t2.micro"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action":"ec2:RunInstances",
+            "Resource": [
+               "arn:aws:ec2:ap-southeast-1:672559297700:network-interface/*",
+               "arn:aws:ec2:ap-southeast-1:672559297700:volume/*",
+               "arn:aws:ec2:ap-southeast-1:672559297700:key-pair/*",
+               "arn:aws:ec2:ap-southeast-1:672559297700:security-group/*",
+               "arn:aws:ec2:ap-southeast-1:672559297700:subnet/*"
+            ]
+         },
+        {
+             "Effect": "Allow",
+             "Action": "ec2:RunInstances",
+             "Resource": [ 
+                      "arn:aws:ec2:ap-southeast-1::image/ami-*"
+                ],
+             "Condition": {
+                "StringEquals": {
+                "ec2:Owner": "amazon"
+                   }
+            }
+        }
+    ]
+}

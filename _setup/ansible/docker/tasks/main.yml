@@ -1,0 +1,10 @@
+---
+- name: Install docker-ce (centos) via amazon-linux-extras packages
+  shell: "amazon-linux-extras install docker -y"
+  become: yes
+
+- name: Start and enable Docker.
+  service:
+    name: docker
+    state: started
+    enabled: True

@@ -1,0 +1,19 @@
+---
+- name: Copy Dockerfile
+  copy:
+    src: "{{ dockerfile_local_path }}"
+    dest: "{{ dockerfile_remote_path }}"
+    owner: ec2-user
+    group: ec2-user
+    mode: '0755'
+  when: copy_files|bool
+
+
+- name: Copy Python File
+  copy:
+    src: "{{ pythonfile_local_path }}"
+    dest: "{{ pythonfile_remote_path }}"
+    owner: ec2-user
+    group: ec2-user
+    mode: '0755'
+  when: copy_files|bool

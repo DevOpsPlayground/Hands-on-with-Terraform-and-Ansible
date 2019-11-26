@@ -1,0 +1,12 @@
+---
+- name: Build Container
+  shell: "docker build -t 'playground:pgflask' ."
+  args:
+   chdir: "/tmp"
+  become: yes
+
+- name: Run Container
+  shell: "docker run -p 80:5000 -d playground:pgflask"
+  args:
+   chdir: "/tmp"
+  become: yes

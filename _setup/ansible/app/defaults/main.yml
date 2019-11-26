@@ -1,0 +1,11 @@
+---
+# General Config
+
+dockerfile_local_path: "/home/ec2-user/playground/Dockerfile"
+pythonfile_local_path: "/home/ec2-user/playground/hello.py"
+
+dockerfile_remote_path: "/tmp/Dockerfile"
+pythonfile_remote_path: "/tmp/hello.py"
+
+# Boolean to copy files
+copy_files: "false"
