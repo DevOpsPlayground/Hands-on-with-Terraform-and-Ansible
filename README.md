@@ -1,4 +1,4 @@
-# Hands-On Infrastructure as code with Terraform
+# Hands-On with Terraform and Ansible
 
 ![](images/header.png)
 
@@ -223,7 +223,9 @@ In your IDE, open the file *lab.yml*. This is our playbook:
 
 ![](images/ansibleplaybook.png)
 
-This defines the groups of hosts to run against, the ssh user to use and the roles to execute. In this case the *app* role.
+Change *\<GROUP\>* to the group lab we specified in the *hosts* file. (It is called lab)
+
+This playbook defines the groups of hosts to run against, the ssh user to use and the roles to execute. In this case the *app* role.
 
 Let's have a look at the app role in more detail. Expand the folder called *app*. You will see the following structure:
 
